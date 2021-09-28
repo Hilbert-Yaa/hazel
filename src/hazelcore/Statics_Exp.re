@@ -339,8 +339,10 @@ and ana_operand =
   | Parenthesized(body) => ana(ctx, body, ty)
   }
 and ana_rules =
-    (ctx: Contexts.t, rules: UHExp.rules, pat_ty: HTyp.t, clause_ty: HTyp.t)
-    : option(unit) =>
+    (ctx: Contexts.t, rules: UHExp.rules, pat_ty: HTyp.t, clause_ty: HTyp.t) // TODO anand and raef: clause_ty needs to be accumulated because Typ Hole u_gens will potentially be incremented
+    : option(unit) =>                                                   // match (hole, hole, 2, hole)
+                                                                        // | hole ->
+                                                                        // | (hole, hole, hole, hole) ->
   List.fold_left(
     (b, r) => {
       let* _ = b;

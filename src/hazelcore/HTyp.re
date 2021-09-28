@@ -7,6 +7,7 @@ type t =
   // UHHole [1] used in (HHole [1.1] , HHole [1.2]) ; 
   // UHHole [1] used in (HHole [1.3] , HHole [1.4]) ;
   // HHole [1.3] used in (HHole [1.3.1], HHole [1.3.2])
+  // matched_arrow on UHHole [1] w gen at 1 (becomes 3) -> Arrow (Hole(1, [2], 0), Hole(1, [3], 0))
   // ^ Hole(1, [3], *0->2*) used in (Hole(1, [3, 1], 0), Hole(1, [3, 2], 0))
   // HHole [1.3] used in (HHole [1.3.3], HHole [1.3.4])
   // ^ Hole(1, [3], *2->4*) used in (Hole(1, [3, 3], 0), Hole(1, [3, 4], 0))
